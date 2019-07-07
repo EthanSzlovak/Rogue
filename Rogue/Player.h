@@ -1,11 +1,12 @@
 #pragma once
 #include "Object.h"
+#include "Array.hpp"
 #include <curses.h>
 class Player : public Object{
 public:
 	Player() {
-		trow = 0;
-		tcol = 0;
+		xPos = 0;
+		yPos = 0;
 	};
 	//Player(int row = 0, int col = 0) {};
 
@@ -16,6 +17,6 @@ public:
 	void checkBounds();
 
 private:
-	
+	Array<Object> pInventory;
 };
 

@@ -13,28 +13,29 @@ void Player::move(int c){
 	
 	switch (c) {
 	case KEY_UP:
-		if (mvinch(trow - 1, tcol) != 'X') {
-			this->trow--;
+		if (mvinch(xPos - 1, yPos) != 'X') {
+			this->xPos--;
+			this->xPos--;
 		}
 		break;
 	case KEY_DOWN:
-		if (mvinch(trow + 1, tcol) != 'X') {
-			this->trow++;
+		if (mvinch(xPos + 1, yPos) != 'X') {
+			this->xPos++;
 		}
 		break;
 	case KEY_LEFT:
-		if (mvinch(trow, tcol - 1) != 'X') {
-			tcol--;
+		if (mvinch(xPos, yPos - 1) != 'X') {
+			yPos--;
 		}
 		break;
 	case KEY_RIGHT:
-		if (mvinch(trow, tcol + 1) != 'X') {
-			tcol++;
+		if (mvinch(xPos, yPos + 1) != 'X') {
+			yPos++;
 		}
 		break;
 	default:
 		break;
 	}
-	curses::move(trow, tcol);
+	curses::move(xPos, yPos);
 	printw("@");
 }

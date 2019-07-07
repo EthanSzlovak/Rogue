@@ -1,4 +1,6 @@
 #pragma once
+
+//For use in the government infiltration missions
 class Enemy :protected Object{
 
 public:

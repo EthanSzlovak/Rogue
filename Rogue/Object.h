@@ -1,16 +1,19 @@
 #pragma once
 #include <curses.h>
+#include <string>
+
+using std::string;
 class Object{
 	public:
 
 		//Object Constructor: DO NOT USE.
-		Object();
-		////Object Destructor: DO NOT USE.
-		~Object();
+		Object() {};
+		//Object Destructor: DO NOT USE.
+		~Object() {};
 	protected:
 		double xPos, yPos, spd = 2;
 
-
+		string name, description;
 		int health;
 		int dispRow, dispCol;
 		//Movement Function for an Object

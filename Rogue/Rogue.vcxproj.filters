@@ -13,45 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\GameBits">
+      <UniqueIdentifier>{1a17be39-99cb-430e-8171-72766c952bbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SuperClasses">
+      <UniqueIdentifier>{ec1724ec-e1d1-4da2-9b4f-cd7cdf9d28c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Gamebits">
+      <UniqueIdentifier>{8fd422c5-d982-48fd-8868-6843327cae0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SuperClasses">
+      <UniqueIdentifier>{d12dfcbe-73de-44ae-8e45-5d72c1c84183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DishSubclasses">
+      <UniqueIdentifier>{4dff3cf8-753e-4f0b-80db-7dd29d71cb86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DishSubclasses">
+      <UniqueIdentifier>{4cd49bf3-79a0-4d78-a97d-fb5ddb8f89b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\SuperClasses</Filter>
     </ClInclude>
     <ClInclude Include="eAI.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\SuperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\SuperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Array.hpp">
+      <Filter>Header Files\Gamebits</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rogue.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files\SuperClasses</Filter>
+    </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SuperClasses</Filter>
     </ClCompile>
     <ClCompile Include="eAI.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SuperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="DishWasherSim.cpp">
+      <Filter>Source Files\GameBits</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
