@@ -1,9 +1,15 @@
 #include "pch.h"
 #include "Enemy.h"
 #include "Object.h"
-class Enemy :protected Object {
-private:
 
-public:
-	Enemy(int startX, int startY){this.xLoc startX}
-};
+	Enemy::Enemy(int startX, int startY) {
+		Object::xPos = startX;
+		Object::yPos = startY;
+	};
+
+	//TODO: Implement AI enums and Systems
+	//TEMPORARY FUNCTION
+
+	void Enemy::_move(Object target) {
+
+	}
