@@ -7,7 +7,7 @@ namespace curses{
 
 
 
-Player::~Player(){
+Player::~Player() {
 }
 void Player::move(int c){ 
 	

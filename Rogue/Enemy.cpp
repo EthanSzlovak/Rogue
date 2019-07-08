@@ -7,6 +7,8 @@
 		Object::yPos = startY;
 	};
 
+
+	//Entire enemy should be implementable from files, allowing easy changes once we get the backend up
 	//TODO: Implement AI enums and Systems
 	//TEMPORARY FUNCTION
 

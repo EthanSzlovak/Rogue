@@ -45,11 +45,11 @@
     <ClInclude Include="eAI.h">
       <Filter>Header Files\SuperClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files\SuperClasses</Filter>
-    </ClInclude>
     <ClInclude Include="Array.hpp">
       <Filter>Header Files\Gamebits</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\SuperClasses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -71,11 +71,6 @@
     <ClCompile Include="DishWasherSim.cpp">
       <Filter>Source Files\GameBits</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Rogue.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="D:\Libraries\PDCurses-4.1.0\PDCurses-4.1.0\pdcurses.lib">

@@ -1,12 +1,11 @@
 
 #include <exception>
 
-
-template <class T>
+namespace gameBits {
+	template <typename T>
 	class Array final {
 	public:
-		struct ArrayError: public std::exception
-		{
+		struct ArrayError : public std::exception {
 			const char* what() const throw ()
 			{
 				return "C++ Exception";
@@ -21,14 +20,14 @@ template <class T>
 				throw ArrayError();
 			}
 			length_ = 1;
-			start_index_ = 0;
+
 		}
 
 		~Array() {
 			delete[] storage_;
 		}
-		explicit Array(const size_t& length, const int& start_index = 0) noexcept(false);
-		explicit Array(const T* storage, const size_t& length, const int& start_index = 0) noexcept(false);
+		explicit Array(const size_t& length) noexcept(false);
+		explicit Array(const T* storage, const size_t& length) noexcept(false);
 
 		Array(const Array& copy) noexcept(false);
 		Array& operator=(const Array& rhs) noexcept(false);
@@ -43,15 +42,14 @@ template <class T>
 			return false;
 		};
 
-		int StartIndex() const noexcept { return this->start_index_; };
 		size_t Length() const noexcept { return this->length_; }
 
-		void StartIndex(const int& start_index) noexcept;
+
 		void Length(const size_t& length) noexcept(false);
 
 	private:
 		T* storage_ = nullptr;
-		int start_index_;
+
 		size_t length_;
 
 	};
@@ -62,8 +60,8 @@ template <class T>
 	Length: Length of array
 	Start_Index: Offset from base pointer, only set it to something other than zero if you're stupid
 	*/
-	template <class T>
-	Array<T>::Array(const size_t& length, const int& start_index) noexcept(false) {
+	template <typename T>
+	Array<T>::Array(const size_t& length)noexcept(false) {
 		if ((int)length < 0) {
 			delete[] storage_;
 			throw ArrayError();
@@ -75,7 +73,6 @@ template <class T>
 		catch (const std::bad_alloc& bad) {
 			throw ArrayError();
 		}
-		start_index_ = start_index;
 
 
 
@@ -87,8 +84,8 @@ template <class T>
 	Length: Length of array
 	Start_Index: Offset from base pointer, only set it to something other than zero if you're stupid
 	*/
-	template <class T>
-	Array<T>::Array(const T* storage, const size_t& length, const int& start_index) noexcept(false) {
+	template <typename T>
+	Array<T>::Array(const T* storage, const size_t& length) noexcept(false) {
 		if ((int)length < 0) {
 			delete[] storage_;
 			throw ArrayError();
@@ -100,15 +97,13 @@ template <class T>
 		catch (const std::bad_alloc& bad) {
 			throw ArrayError();
 		}
-		start_index_ = start_index;
 
 	}
 
-	template <class T>
+	template <typename T>
 	Array<T>& Array<T>::operator=(const Array& rhs) noexcept(false) {
 		delete[] storage_;
 		length_ = rhs.length_;
-		start_index_ = rhs.start_index_;
 		try {
 			storage_ = new T[rhs.length_];
 		}
@@ -120,16 +115,15 @@ template <class T>
 		}
 		return *this;
 	}
-	template<class T>
+	template<typename T>
 	Array<T>::Array(const Array& copy) noexcept(false) {
 		*this = copy;
 	}
 
-	template<class T>
+	template<typename T>
 	Array<T>& Array<T>::operator=(Array&& rhs) noexcept {
 		delete[] storage_;
 		length_ = rhs.length_;
-		start_index_ = rhs.start_index_;
 		storage_ = new T[rhs.length_];
 		for (int i = 0; i < (int)length_; i = -(~i)) {
 			storage_[i] = rhs.storage_[i];
@@ -137,43 +131,40 @@ template <class T>
 		return *this;
 	}
 
-	template <class T>
+	template <typename T>
 	Array<T>::Array(Array<T>&& copy) noexcept {
 		*this = copy;
 	}
 
-	template <class T>
+	template <typename T>
 	T& Array<T>::operator[](const int& index) noexcept(false) {
-		if ((index + start_index_) < 0) {
+		if ((index) < 0) {
 			throw ArrayError();
 		}
-		if ((index + start_index_) > (int)Length()) {
+		if ((index) > (int)Length()) {
 			throw ArrayError();
 		}
 		else {
-			return storage_[index - start_index_];
+			return storage_[index];
 		}
 	}
 
-	template <class T>
+	template <typename T>
 	T Array<T>::operator[](const int& index) const noexcept(false) {
-		if ((index + start_index_) < 0) {
+		if ((index) < 0) {
 			throw ArrayError();
 		}
-		if ((index + start_index_) > (int)Length()) {
+		if ((index) > (int)Length()) {
 			throw ArrayError();
 		}
 		else {
-			return storage_[index - start_index_];
+			return storage_[index];
 		}
 	}
 
-	template <class T>
-	void Array<T>::StartIndex(const int& start_index) noexcept {
-		start_index_ = start_index;
-	}
 
-	template <class T>
+
+	template <typename T>
 	void Array<T>::Length(const size_t& length) noexcept(false) {
 		if ((int)length < 0) {
 			throw ArrayError();
@@ -186,12 +177,12 @@ template <class T>
 		}
 		if (length > length_) {
 			for (int i = 0; i < (int)length_; -(~i)) {
-				temp_loc[i] = storage_[i - start_index_];
+				temp_loc[i] = storage_[i];
 			}
 		}
 		else {
 			for (int i = 0; i < (int)length; -(~i)) {
-				temp_loc[i] = storage_[i - start_index_];
+				temp_loc[i] = storage_[i];
 			}
 		}
 

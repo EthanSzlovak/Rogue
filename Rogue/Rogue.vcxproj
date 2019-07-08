@@ -175,9 +175,6 @@
     <ClCompile Include="DishWasherSim.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Rogue.rc" />
-  </ItemGroup>
-  <ItemGroup>
     <Library Include="D:\Libraries\PDCurses-4.1.0\PDCurses-4.1.0\pdcurses.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

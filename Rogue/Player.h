@@ -2,21 +2,27 @@
 #include "Object.h"
 #include "Array.hpp"
 #include <curses.h>
+
+using gameBits::Array;
 class Player : public Object{
 public:
-	Player() {
-		xPos = 0;
+	Player(int xPos, int yPos){
+
+		dishInventorySize = 1;
+		obje = new Array<Object>(1);
+		
 		yPos = 0;
 	};
 	//Player(int row = 0, int col = 0) {};
 
 
 	~Player();
-	void move(int c);
-	void print();
-	void checkBounds();
+	void _move(int c);
+	void _print();
 
 private:
-	Array<Object> pInventory;
+	int dishInventorySize;
+	gameBits::Array<Object>* obje;
+	
 };
 
