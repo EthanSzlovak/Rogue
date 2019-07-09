@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "Array.hpp"
 class Dish : protected Object {
 public:
 
@@ -14,6 +15,6 @@ private:
 	*/
 	
 	int width, height, depth;
-
+	gameBits::Array<DishItems> contents;
 };
 

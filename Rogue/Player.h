@@ -9,9 +9,10 @@ public:
 	Player(int xPos, int yPos){
 
 		dishInventorySize = 1;
-		obje = new Array<Object>(1);
+		inventory.Length(dishInventorySize);
 		
-		yPos = 0;
+		_yPos = yPos;
+		_xPos = xPos;
 	};
 	//Player(int row = 0, int col = 0) {};
 
@@ -22,7 +23,7 @@ public:
 
 private:
 	int dishInventorySize;
-	gameBits::Array<Object>* obje;
+	gameBits::Array<Object> inventory;
 	
 };
 

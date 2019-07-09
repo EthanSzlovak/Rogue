@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="Array.hpp" />
     <ClInclude Include="Dish.h" />
+    <ClInclude Include="DishItems.h" />
     <ClInclude Include="eAI.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Object.h" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dish.cpp" />
+    <ClCompile Include="DishItems.cpp" />
     <ClCompile Include="eAI.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Object.cpp" />
