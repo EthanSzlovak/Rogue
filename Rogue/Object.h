@@ -18,8 +18,10 @@ class Object{
 		virtual void _move() {};
 
 		//Display Function for an object
-		virtual void _print();
+		virtual void _print() {};
 
-		virtual inline double getX();
-		virtual inline double getY();
+		virtual inline double getX() {
+			return this->_xPos;
+		};
+		virtual inline double getY() { return this->_yPos; };
 };

@@ -18,7 +18,7 @@ int main(){
 	
 	//Intialize System
 	int ch;
-	Player p;
+	//Player p;
 	initscr();			
 	keypad(stdscr, TRUE);
 	noecho();
@@ -33,7 +33,7 @@ int main(){
 			move(6, 6 + i);
 			printw("X");
 		}
-		p.move(ch);
+		//p.move(ch);
 		refresh();
 		
 	

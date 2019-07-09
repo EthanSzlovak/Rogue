@@ -3,8 +3,8 @@
 #include "Object.h"
 //This will be used for the infiltration missions
 	Enemy::Enemy(int startX, int startY) {
-		Object::xPos = startX;
-		Object::yPos = startY;
+		_xPos = startX;
+		_yPos = startY;
 	};
 
 

@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Object.h"
 //For use in the government infiltration missions
 class Enemy :protected Object{
 

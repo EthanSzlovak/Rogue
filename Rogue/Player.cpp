@@ -9,33 +9,34 @@ namespace curses{
 
 Player::~Player() {
 }
-void Player::move(int c){ 
-	
+void Player::_move(int c){ 
+	/*
 	switch (c) {
 	case KEY_UP:
-		if (mvinch(xPos - 1, yPos) != 'X') {
-			this->xPos--;
-			this->xPos--;
+		if (mvinch(_xPos - 1, _yPos) != 'X') {
+			this->_xPos--;
+			this->_xPos--;
 		}
 		break;
 	case KEY_DOWN:
-		if (mvinch(xPos + 1, yPos) != 'X') {
-			this->xPos++;
+		if (mvinch(_xPos + 1, _yPos) != 'X') {
+			this->_xPos++;
 		}
 		break;
 	case KEY_LEFT:
-		if (mvinch(xPos, yPos - 1) != 'X') {
-			yPos--;
+		if (mvinch(_xPos, _yPos - 1) != 'X') {
+			_yPos--;
 		}
 		break;
 	case KEY_RIGHT:
-		if (mvinch(xPos, yPos + 1) != 'X') {
-			yPos++;
+		if (mvinch(_xPos, _yPos + 1) != 'X') {
+			_yPos++;
 		}
 		break;
 	default:
 		break;
 	}
-	curses::move(xPos, yPos);
+	curses::move(_xPos, _yPos);
 	printw("@");
+	*/
 }

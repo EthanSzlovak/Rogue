@@ -51,6 +51,9 @@
     <ClInclude Include="Object.h">
       <Filter>Header Files\SuperClasses</Filter>
     </ClInclude>
+    <ClInclude Include="Dish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="DishWasherSim.cpp">
       <Filter>Source Files\GameBits</Filter>
+    </ClCompile>
+    <ClCompile Include="Dish.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

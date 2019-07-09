@@ -18,7 +18,7 @@ public:
 
 	~Player();
 	void _move(int c);
-	void _print();
+	void _print() {};
 
 private:
 	int dishInventorySize;

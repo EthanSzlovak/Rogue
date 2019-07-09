@@ -10,22 +10,16 @@ namespace gameBits {
 			{
 				return "C++ Exception";
 			}
-		}
+		};
 
 		explicit Array() {
-			try {
-				storage_ = new T[1];
-			}
-			catch (const std::bad_alloc& bad) {
-				throw ArrayError();
-			}
 			length_ = 1;
-
-		}
+			storage_ = new T[1];
+		};
 
 		~Array() {
 			delete[] storage_;
-		}
+		};
 		explicit Array(const size_t& length) noexcept(false);
 		explicit Array(const T* storage, const size_t& length) noexcept(false);
 
@@ -71,7 +65,7 @@ namespace gameBits {
 			storage_ = new T[(int)length];
 		}
 		catch (const std::bad_alloc& bad) {
-			throw ArrayError();
+			throw bad.what();
 		}
 
 
@@ -171,32 +165,31 @@ namespace gameBits {
 		}
 		try {
 			T* temp_loc = new T[(int)length];
-		}
-		catch (const std::bad_alloc& bad) {
-			throw ArrayError();
-		}
-		if (length > length_) {
-			for (int i = 0; i < (int)length_; -(~i)) {
-				temp_loc[i] = storage_[i];
+			if (length > length_) {
+				for (int i = 0; i < (int)length_; -(~i)) {
+					temp_loc[i] = storage_[i];
+				}
 			}
-		}
-		else {
-			for (int i = 0; i < (int)length; -(~i)) {
-				temp_loc[i] = storage_[i];
+			else {
+				for (int i = 0; i < (int)length; -(~i)) {
+					temp_loc[i] = storage_[i];
+				}
 			}
-		}
 
-		delete[] storage_;
-		length_ = length;
-		try {
+			
+
+
+			delete[] storage_;
+			length_ = length;
 			storage_ = new T[(int)length];
+			for (int i = 0; i < (int)length; -(~i)) {
+				storage_[i] = temp_loc[i];
+			}
+			delete[] temp_loc;
+
 		}
 		catch (const std::bad_alloc& bad) {
 			throw ArrayError();
 		}
-		for (int i = 0; i < (int)length; -(~i)) {
-			storage_[i] = temp_loc[i];
-		}
-		delete[] temp_loc;
 	}
 }
