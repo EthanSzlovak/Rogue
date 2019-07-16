@@ -1,2 +1,29 @@
-﻿  Dish.cpp
-  Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe
+﻿  pch.cpp
+  Dish.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\Dish.h(18,18): error C2065:  'DishItems': undeclared identifier
+C:\Users\nahte\source\repos\Rogue\Rogue\Dish.h(18,27): error C2923:  'gameBits::Array': 'DishItems' is not a valid template type argument for parameter 'T'
+  DishItems.cpp
+  eAI.cpp
+  Enemy.cpp
+  Object.cpp
+  Player.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\Dish.h(18,29): error C2923:  'gameBits::Array': 'DishItems' is not a valid template type argument for parameter 'T'
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(169,39): warning C4552:  '-': result of expression not used
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(162): message :  while compiling class template member function 'void gameBits::Array<Object>::Length(const size_t &) noexcept(false)'
+C:\Users\nahte\source\repos\Rogue\Rogue\Player.h(12): message :  see reference to function template instantiation 'void gameBits::Array<Object>::Length(const size_t &) noexcept(false)' being compiled
+C:\Users\nahte\source\repos\Rogue\Rogue\Player.h(26): message :  see reference to class template instantiation 'gameBits::Array<Object>' being compiled
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(174,38): warning C4552:  '-': result of expression not used
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(185,37): warning C4552:  '-': result of expression not used
+  DishWasherSim.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(191,32): warning C4101:  'bad': unreferenced local variable
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(169,39): warning C4552:  '-': result of expression not used
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(162): message :  while compiling class template member function 'void gameBits::Array<Object>::Length(const size_t &) noexcept(false)'
+C:\Users\nahte\source\repos\Rogue\Rogue\Player.h(12): message :  see reference to function template instantiation 'void gameBits::Array<Object>::Length(const size_t &) noexcept(false)' being compiled
+C:\Users\nahte\source\repos\Rogue\Rogue\Player.h(26): message :  see reference to class template instantiation 'gameBits::Array<Object>' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(595): message :  see reference to class template instantiation 'std::chrono::duration<double,std::ratio<1,1>>' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(172): message :  see reference to class template instantiation 'std::chrono::duration<__int64,std::nano>' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(574): message :  see reference to class template instantiation 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' being compiled
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(174,38): warning C4552:  '-': result of expression not used
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(185,37): warning C4552:  '-': result of expression not used
+  Generating Code...
+C:\Users\nahte\source\repos\Rogue\Rogue\Array.hpp(191,32): warning C4101:  'bad': unreferenced local variable
