@@ -1,5 +1,0 @@
-﻿  bitFlagTest.cpp
-C:\Users\nahte\source\repos\Rogue\Rogue\bitFlag.h(20,29): warning C4244:  'initializing': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\nahte\source\repos\Rogue\Rogue\bitFlag.h(22,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\nahte\source\repos\Rogue\Rogue\bitFlag.h(36,1): error C2059:  syntax error: '>'
-C:\Users\nahte\source\repos\Rogue\Rogue\bitFlag.h(45,1): error C2059:  syntax error: '>'

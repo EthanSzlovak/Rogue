@@ -13,106 +13,28 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\GameBits">
-      <UniqueIdentifier>{1a17be39-99cb-430e-8171-72766c952bbb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SuperClasses">
-      <UniqueIdentifier>{ec1724ec-e1d1-4da2-9b4f-cd7cdf9d28c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Gamebits">
-      <UniqueIdentifier>{8fd422c5-d982-48fd-8868-6843327cae0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SuperClasses">
-      <UniqueIdentifier>{d12dfcbe-73de-44ae-8e45-5d72c1c84183}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SuperClasses\PlayerClasses">
-      <UniqueIdentifier>{bd6a4602-4448-4dbb-b5e1-d3bc7f2c20bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SuperClasses\DishgameClasses">
-      <UniqueIdentifier>{3c7e74fa-5e9f-4e27-851a-c3613e17f1ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SuperClasses\RogueLikeClasses">
-      <UniqueIdentifier>{b90e94cf-0ea0-458d-914b-909127845523}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SuperClasses\DishgameClasses">
-      <UniqueIdentifier>{ab0ae5c9-7050-41ba-bd92-8d5ccc09d686}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SuperClasses\RogueLikeClasses">
-      <UniqueIdentifier>{b1eac96b-b400-4a77-9397-78864643a6f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SuperClasses\PlayerClasses">
-      <UniqueIdentifier>{bc47c098-2a2d-48d2-8ca4-6bbea0f24b21}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
+    <ClCompile Include="Rogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Array.hpp">
-      <Filter>Header Files\Gamebits</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files\SuperClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\SuperClasses\PlayerClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="Dish.h">
-      <Filter>Header Files\SuperClasses\DishgameClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files\SuperClasses\RogueLikeClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="eAI.h">
-      <Filter>Header Files\SuperClasses\RogueLikeClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="DishItems.h">
-      <Filter>Header Files\SuperClasses\DishgameClasses</Filter>
+    <ClInclude Include="curses.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files\SuperClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="Dish.cpp">
-      <Filter>Source Files\SuperClasses\DishgameClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="eAI.cpp">
-      <Filter>Source Files\SuperClasses\RogueLikeClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\SuperClasses\RogueLikeClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="DishWasherSim.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\SuperClasses\PlayerClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="DishItems.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ResourceCompile Include="Rogue.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="D:\Libraries\PDCurses-4.1.0\PDCurses-4.1.0\pdcurses.lib">
+    <Library Include="..\..\..\..\Downloads\PDCurses-4.1.0\PDCurses-4.1.0\wincon\pdcurses.lib">
       <Filter>Resource Files</Filter>
     </Library>
-    <Library Include="D:\SDL2-2.0.9\lib\x86\SDL2.lib">
-      <Filter>Resource Files</Filter>
-    </Library>
-    <Library Include="D:\SDL2-2.0.9\lib\x86\SDL2main.lib">
-      <Filter>Resource Files</Filter>
-    </Library>
-    <Library Include="D:\SDL2-2.0.9\lib\x86\SDL2test.lib">
-      <Filter>Resource Files</Filter>
-    </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="D:\SDL2-2.0.9\lib\x86\SDL2.dll">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
