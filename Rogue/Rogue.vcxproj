@@ -162,17 +162,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rogue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curses.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Rogue.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\..\Downloads\PDCurses-4.1.0\PDCurses-4.1.0\wincon\pdcurses.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
