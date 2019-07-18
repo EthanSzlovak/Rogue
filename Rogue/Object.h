@@ -12,7 +12,7 @@ namespace Rogue {
 			image_ = ' ';
 		};
 		virtual void move() = 0;
-		virtual void draw() = 0;
+		virtual void draw(WINDOW* w) = 0;
 
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };

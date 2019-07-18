@@ -11,12 +11,11 @@ public:
 	}
 
 
-	void draw(WINDOW* w) {
+	virtual void draw(WINDOW* w) override {
 		wmove(w, yLoc_, xLoc_);
 		wprintw(w, &image_);
 	}
 
 	inline virtual void move() override { const bool moving = true; }
-	inline virtual void draw() override {}
 };
 
