@@ -11,8 +11,8 @@ namespace Rogue {
 			yLoc_ = 0;
 			image_ = ' ';
 		};
-		virtual void move() {};
-		virtual void draw() {};
+		virtual void move() = 0;
+		virtual void draw() = 0;
 
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };
