@@ -67,7 +67,7 @@ WINDOW* create_newwin(int height, int width, int starty, int startx){
 	box(local_win, 0, 0);		/* 0, 0 gives default characters
 					 * for the vertical and horizontal
 					 * lines			*/
-	wmove(local_win, 0, 0);
+	wmove(local_win, 0, 0);	
 	p.draw(local_win);
 	wrefresh(local_win);		/* Show that box 		*/
 
