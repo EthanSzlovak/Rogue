@@ -17,10 +17,8 @@ namespace Rogue {
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };
 
-		void xLoc(int i) { xLoc_ = i; };
 
 		int& yLoc() { return yLoc_; };
 		int yLoc() const { return yLoc_; };
-		void yLoc(int i) { yLoc_ = i; };
 	};
 }
