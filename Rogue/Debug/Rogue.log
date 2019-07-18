@@ -1,6 +1,1 @@
-﻿  Player.cpp
-  Rogue.cpp
-C:\Users\nahte\source\repos\Rogue\Rogue\Rogue.cpp(16,29): warning C4101:  'height': unreferenced local variable
-  Generating Code...
-C:\Users\nahte\source\repos\Rogue\Rogue\Rogue.cpp(16,22): warning C4101:  'width': unreferenced local variable
-  Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe
+﻿

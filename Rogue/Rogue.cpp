@@ -2,14 +2,15 @@
 #include "Object.h"
 #include "Player.h"
 #include <vector>
+#include "Chest.h"
 WINDOW* create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW* local_win);
 
 using Rogue::Object;
 using std::vector;
+Chest c("Treasure", 4, 5);;
 Player p(0, 0);
 vector<Object> enemyList;
-std::string* inventory = new std::string[5];
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
 	WINDOW* inventoryWindow;
@@ -20,6 +21,8 @@ int main(int argc, char* argv[]){
 	cbreak();			
 	//Allow Function Keys
 	keypad(stdscr, TRUE);
+	
+
 
 	//Set Start Variables for Main Window
 	starty = 5;
@@ -35,14 +38,10 @@ int main(int argc, char* argv[]){
 	printw("Press F1 to exit");
 
 	//TODO: Implement Enemy Creatures
-	for (int i = 0; i < 5; ++i) {
-
-
-		//enemyList.insert()
-	}
 	
 
 	while ((ch = getch()) != KEY_F(1)){
+		
 		switch (ch){
 		case KEY_LEFT:
 			p.xLoc()--;
@@ -65,13 +64,17 @@ int main(int argc, char* argv[]){
 			mainGameWindow = create_newwin(20, 40, starty, startx);
 			break;
 		}
+		
+		
+
 	}
 	
 	endwin();			/* End curses mode		  */
 	p.move();
-	delete[] inventory;
 	return 0;
 }
+
+
 
 WINDOW* create_newwin(int height, int width, int starty, int startx){
 	WINDOW* local_win;
@@ -84,7 +87,10 @@ WINDOW* create_newwin(int height, int width, int starty, int startx){
 
 	wprintw(local_win, "TEST");
 	wmove(local_win, 0, 0);	
+	c.draw(local_win);
 	p.draw(local_win);
+	
+	c.updateState(local_win);
 	wrefresh(local_win);		/* Show that box 		*/
 
 	return local_win;

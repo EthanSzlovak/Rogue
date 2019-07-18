@@ -11,10 +11,11 @@ namespace Rogue {
 			yLoc_ = 0;
 			image_ = ' ';
 		};
-		virtual void move() = 0;
+		void move() {};
 
-		virtual void draw(WINDOW* w) = 0;
+		void draw(WINDOW* w) {};
 
+		void updateState() {};
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };
 

@@ -162,10 +162,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Rogue.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Chest.h" />
     <ClInclude Include="curses.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />

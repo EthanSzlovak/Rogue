@@ -7,3 +7,6 @@
 *.tlog
 Rogue/Debug/Rogue.tlog/link.read.1.tlog
 *.tlog
+*.obj
+*.obj
+Rogue/Debug/Rogue.obj
