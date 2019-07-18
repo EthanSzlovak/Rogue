@@ -1,2 +1,9 @@
 
 .vs/Rogue/v16/Browse.VC.opendb
+*.obj
+*.obj
+*.obj
+*.tlog
+*.tlog
+Rogue/Debug/Rogue.tlog/link.read.1.tlog
+*.tlog

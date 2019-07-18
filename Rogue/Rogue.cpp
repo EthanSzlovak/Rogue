@@ -6,12 +6,13 @@ WINDOW* create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW* local_win);
 
 using Rogue::Object;
+using std::vector;
 Player p(0, 0);
-
-
+vector<Object> enemyList;
+std::string* inventory = new std::string[5];
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
-	
+	WINDOW* inventoryWindow;
 	int startx, starty, width, height;
 	int ch;
 	//Start Curses Mode
@@ -25,10 +26,22 @@ int main(int argc, char* argv[]){
 	startx = 0;
 
 	mainGameWindow = create_newwin(20, 40, starty, startx);
-	refresh();
+	inventoryWindow = newwin(20, 40, 5, 55);
+	box(inventoryWindow, 0, 0);
+	wprintw(inventoryWindow, "TESTINT");
 
+
+	wrefresh(inventoryWindow);
+	refresh();
+	wrefresh(inventoryWindow);
 	printw("Press F1 to exit");
 
+	//TODO: Implement Enemy Creatures
+	for (int i = 0; i < 5; ++i) {
+
+
+		//enemyList.insert()
+	}
 	
 
 	while ((ch = getch()) != KEY_F(1)){
@@ -58,6 +71,7 @@ int main(int argc, char* argv[]){
 	
 	endwin();			/* End curses mode		  */
 	p.move();
+	delete[] inventory;
 	return 0;
 }
 
@@ -68,6 +82,9 @@ WINDOW* create_newwin(int height, int width, int starty, int startx){
 	box(local_win, 0, 0);		/* 0, 0 gives default characters
 					 * for the vertical and horizontal
 					 * lines			*/
+
+
+	wprintw(local_win, "TEST");
 	wmove(local_win, 0, 0);	
 	p.draw(local_win);
 	wrefresh(local_win);		/* Show that box 		*/
