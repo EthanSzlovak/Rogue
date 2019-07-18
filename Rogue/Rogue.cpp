@@ -30,8 +30,6 @@ int main(int argc, char* argv[]){
 	box(inventoryWindow, 0, 0);
 	wprintw(inventoryWindow, "TESTINT");
 
-
-	wrefresh(inventoryWindow);
 	refresh();
 	wrefresh(inventoryWindow);
 	printw("Press F1 to exit");

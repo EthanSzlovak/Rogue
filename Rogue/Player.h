@@ -19,6 +19,6 @@ public:
 
 
 
-	inline virtual void move() override { const bool moving = true; }
+	inline void move() override {}
 };
 
