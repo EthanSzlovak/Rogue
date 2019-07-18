@@ -57,6 +57,7 @@ int main(int argc, char* argv[]){
 	}
 	
 	endwin();			/* End curses mode		  */
+	p.move();
 	return 0;
 }
 
