@@ -19,13 +19,14 @@ namespace Rogue {
 			image_ = ' ';
 		};
 		void move() {};
+		// used for monster instances
+		virtual void move(const int& pXLoc, const int& pYLoc) {}
 
-		void draw(WINDOW* w) {};
+		virtual void draw(WINDOW* w) {};
 
 		void updateState() {};
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };
-
 
 		int& yLoc() { return yLoc_; };
 		int yLoc() const { return yLoc_; };

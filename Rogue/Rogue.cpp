@@ -1,9 +1,11 @@
-﻿#include "curses.h"
+﻿#include <vector>
+#include <cstring>
+
+#include "curses.h"
 #include "Object.h"
 #include "Player.h"
-#include <vector>
-#include <cstring>
 #include "Chest.h"
+#include "Monster.h"
 
 //Using Variables
 using Rogue::Object;
@@ -20,8 +22,13 @@ Chest d("Gold", 6, 5);
 Player p(0, 0);
 
 //Enemylisting
-vector<Object> enemyList;
+/*vector<Monster> monsterList{ Monster(5,5), Monster(10, 5) };
+vector<Object*> abstractEnemyList{ &monsterList[0], &monsterList[1] }*/;
+Monster m1(10, 5);
+Monster m2(5, 19);
 
+Object* abstract_m1 = &m1;
+Object* abstract_m2 = &m2;
 
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
@@ -105,6 +112,9 @@ WINDOW* updateInventoryWindow(WINDOW* w) {
 WINDOW* create_newwin(int height, int width, int starty, int startx){
 	WINDOW* local_win;
 
+	// used to maintain tick speed
+	static int alternation = 0;
+
 	local_win = newwin(height, width, starty, startx);
 
 	//Draw box of default characters
@@ -121,12 +131,26 @@ WINDOW* create_newwin(int height, int width, int starty, int startx){
 	//Update Player
 	p.draw(local_win);
 
+	//Update Monster with Player's Coordinates
+	if (alternation % 2 == 0)
+	{
+		abstract_m1->move(p.xLoc(), p.yLoc());
+		abstract_m2->move(p.xLoc(), p.yLoc());
+	}
+
+	//Display Monsters
+	abstract_m1->draw(local_win);
+	abstract_m2->draw(local_win);
+
 	//Update Chests
 	c.updateState(local_win);
 	d.updateState(local_win);
 
 	//show Box
 	wrefresh(local_win);		/* Show that box 		*/
+
+	// used to maintain tick speed
+	++alternation;
 
 	return local_win;
 }
