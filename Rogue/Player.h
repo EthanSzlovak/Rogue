@@ -2,11 +2,13 @@
 #include "Object.h"
 #include <vector>
 #include <iostream>
-static std::vector<std::string> inventory;
+
+	
 
 using std::string;
 class Player : public Rogue::Object{
 public:
+	
 	Player(int xLoc, int yLoc) {
 		xLoc_ = xLoc; 
 		yLoc_ = yLoc;
@@ -20,9 +22,7 @@ public:
 	}
 
 
-	static void addToInventory(string n) {
-		inventory.push_back(n);
-	}
+	
 	inline void move() {}
 };
 

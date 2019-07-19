@@ -2,7 +2,9 @@
 #include "Object.h"
 #include "Player.h"
 #include <vector>
+#include <cstring>
 #include "Chest.h"
+WINDOW* updateInventoryWindow(WINDOW* w);
 WINDOW* create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW* local_win);
 
@@ -29,10 +31,11 @@ int main(int argc, char* argv[]){
 	startx = 0;
 
 	mainGameWindow = create_newwin(20, 40, starty, startx);
+	
 	inventoryWindow = newwin(20, 40, 5, 55);
 	box(inventoryWindow, 0, 0);
 	wprintw(inventoryWindow, "TESTINT");
-
+	
 	refresh();
 	wrefresh(inventoryWindow);
 	printw("Press F1 to exit");
@@ -64,6 +67,7 @@ int main(int argc, char* argv[]){
 			mainGameWindow = create_newwin(20, 40, starty, startx);
 			break;
 		}
+		updateInventoryWindow(inventoryWindow);
 		
 		
 
@@ -74,8 +78,15 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 
+WINDOW* updateInventoryWindow(WINDOW* w) {
 
-
+	for (int i = 0; i < inventory.size(); ++i) {
+		wmove(w, i, 0);
+		wprintw(w, inventory.at(i).c_str());
+	}
+	wrefresh(w);
+	return w;
+}
 WINDOW* create_newwin(int height, int width, int starty, int startx){
 	WINDOW* local_win;
 
@@ -89,7 +100,6 @@ WINDOW* create_newwin(int height, int width, int starty, int startx){
 	wmove(local_win, 0, 0);	
 	c.draw(local_win);
 	p.draw(local_win);
-	
 	c.updateState(local_win);
 	wrefresh(local_win);		/* Show that box 		*/
 

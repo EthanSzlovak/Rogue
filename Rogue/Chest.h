@@ -29,7 +29,7 @@ public:
 	void updateState(WINDOW* w) {
 		if (mvwinch(w, yLoc_, xLoc_) == '@'&&!isOpened) {
 			isOpened = true;
-			Player::addToInventory(inventory_);
+			inventory.push_back(inventory_);
 			inventory_ = "";
 			image_ = '0';
 			

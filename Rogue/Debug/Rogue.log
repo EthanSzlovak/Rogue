@@ -1,1 +1,5 @@
-﻿
+﻿  Rogue.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\Rogue.cpp(19,29): warning C4101:  'height': unreferenced local variable
+C:\Users\nahte\source\repos\Rogue\Rogue\Rogue.cpp(19,22): warning C4101:  'width': unreferenced local variable
+C:\Users\nahte\source\repos\Rogue\Rogue\Rogue.cpp(83,20): warning C4018:  '<': signed/unsigned mismatch
+  Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe

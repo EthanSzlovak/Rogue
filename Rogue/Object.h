@@ -1,11 +1,18 @@
 #pragma once
 #include "curses.h"
+#include <vector>
+#include <string>
+using std::vector;
+using std::string;
+static vector<string> inventory;
 namespace Rogue {
 	class Object {
+
 	protected:
 		int xLoc_, yLoc_;
 		char image_;
 	public:
+		
 		Object() {
 			xLoc_ = 0;
 			yLoc_ = 0;
