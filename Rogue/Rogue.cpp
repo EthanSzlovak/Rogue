@@ -4,39 +4,47 @@
 #include <vector>
 #include <cstring>
 #include "Chest.h"
+
+//Using Variables
+using Rogue::Object;
+using std::vector;
+
+//Window Function Definitions
 WINDOW* updateInventoryWindow(WINDOW* w);
 WINDOW* create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW* local_win);
 
-using Rogue::Object;
-using std::vector;
-Chest c("Treasure", 4, 5);;
+//Immediately Instantiated Variables
+Chest c("Treasure", 4, 5);
+Chest d("Gold", 6, 5);
 Player p(0, 0);
+
+//Enemylisting
 vector<Object> enemyList;
+
+
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
 	WINDOW* inventoryWindow;
-	int startx, starty, width, height;
 	int ch;
+
 	//Start Curses Mode
 	initscr();			
-	cbreak();			
+	cbreak();		
+
 	//Allow Function Keys
 	keypad(stdscr, TRUE);
-	
-
 
 	//Set Start Variables for Main Window
-	starty = 5;
-	startx = 0;
+	mainGameWindow = create_newwin(20, 40, 5, 1);
 
-	mainGameWindow = create_newwin(20, 40, starty, startx);
-	
+	//Initialize Inventory Window
 	inventoryWindow = newwin(20, 40, 5, 55);
 	box(inventoryWindow, 0, 0);
-	wprintw(inventoryWindow, "TESTINT");
+	wprintw(inventoryWindow, "Inventory");
 	
 	refresh();
+	wrefresh(mainGameWindow);
 	wrefresh(inventoryWindow);
 	printw("Press F1 to exit");
 
@@ -44,29 +52,31 @@ int main(int argc, char* argv[]){
 	
 
 	while ((ch = getch()) != KEY_F(1)){
-		
+		//Player move loop
 		switch (ch){
 		case KEY_LEFT:
 			p.xLoc()--;
 			destroy_win(mainGameWindow);
-			mainGameWindow = create_newwin(20, 40, starty, startx);
+			mainGameWindow = create_newwin(20, 40, 5, 1);
 			break;
 		case KEY_RIGHT:
 			p.xLoc()++;
 			destroy_win(mainGameWindow);
-			mainGameWindow = create_newwin(20, 40, starty, startx);
+			mainGameWindow = create_newwin(20, 40, 5, 1);
 			break;
 		case KEY_UP:
 			p.yLoc()--;
 			destroy_win(mainGameWindow);
-			mainGameWindow = create_newwin(20, 40, starty, startx);
+			mainGameWindow = create_newwin(20, 40, 5, 1);
 			break;
 		case KEY_DOWN:
 			p.yLoc()++;
 			destroy_win(mainGameWindow);
-			mainGameWindow = create_newwin(20, 40, starty, startx);
+			mainGameWindow = create_newwin(20, 40, 5, 1);
 			break;
 		}
+
+		
 		updateInventoryWindow(inventoryWindow);
 		
 		
@@ -78,29 +88,44 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 
-WINDOW* updateInventoryWindow(WINDOW* w) {
 
+//Update inventory Window
+WINDOW* updateInventoryWindow(WINDOW* w) {
+	//Get all items in the player inventory
 	for (int i = 0; i < inventory.size(); ++i) {
-		wmove(w, i, 0);
+		wmove(w, i + 1, 1);
 		wprintw(w, inventory.at(i).c_str());
 	}
+
+	//Redraw the Window
 	wrefresh(w);
+
 	return w;
 }
 WINDOW* create_newwin(int height, int width, int starty, int startx){
 	WINDOW* local_win;
 
 	local_win = newwin(height, width, starty, startx);
-	box(local_win, 0, 0);		/* 0, 0 gives default characters
-					 * for the vertical and horizontal
-					 * lines			*/
 
+	//Draw box of default characters
+	box(local_win, 0, 0);
 
-	wprintw(local_win, "TEST");
+	//Print everything in the main window
+	wprintw(local_win, "Main Window");
 	wmove(local_win, 0, 0);	
+
+	//Update Chests
 	c.draw(local_win);
+	d.draw(local_win);
+	
+	//Update Player
 	p.draw(local_win);
+
+	//Update Chests
 	c.updateState(local_win);
+	d.updateState(local_win);
+
+	//show Box
 	wrefresh(local_win);		/* Show that box 		*/
 
 	return local_win;
