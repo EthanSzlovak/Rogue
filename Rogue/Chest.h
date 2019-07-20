@@ -9,7 +9,7 @@ private:
 
 	bool isOpened = false;
 	string inventory_ = "Delicious Treasure";
-public: 
+public:
 	Chest(string inventory, int xLoc, int yLoc) {
 		xLoc_ = xLoc;
 		yLoc_ = yLoc;
@@ -23,6 +23,7 @@ public:
 		wprintw(w, &image_);
 	}
 
+	//Updates state of chest in order to check if it is used
 	void updateState(WINDOW* w) {
 		if (mvwinch(w, yLoc_, xLoc_) == '@' && !isOpened) {
 			isOpened = true;
@@ -30,12 +31,12 @@ public:
 			inventory_ = "";
 			image_ = '0';
 		}
-	}
+	};
 
 	void move() {}
 
 
-	inline void setInventory(string toSet){inventory_ = toSet;}
+	inline void setInventory(string toSet) { inventory_ = toSet; }
 	inline string getInventory() { return inventory_; };
 
 };

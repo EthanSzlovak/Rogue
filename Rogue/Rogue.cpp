@@ -1,4 +1,6 @@
-﻿#include <vector>
+﻿
+
+#include <vector>
 #include <cstring>
 
 #include "curses.h"
@@ -29,7 +31,11 @@ Monster m2(5, 19, '&');
 
 iObject* abstract_m1 = &m1;
 iObject* abstract_m2 = &m2;
-
+//TODO: Add [E]quip
+//TODO: Add [D]rop
+//TODO: Add [I]nventory; Switches window to inventory window (Figure out how to select items)
+//TODO: Add e[X]amine; Returns description of Item
+//TODO: Add
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
 	WINDOW* inventoryWindow;
@@ -99,7 +105,7 @@ int main(int argc, char* argv[]){
 //Update inventory Window
 WINDOW* updateInventoryWindow(WINDOW* w) {
 	//Get all items in the player inventory
-	for (int i = 0; i < inventory.size(); ++i) {
+	for (int i = 0; i < (int)inventory.size(); ++i) {
 		wmove(w, i + 1, 1);
 		wprintw(w, inventory.at(i).c_str());
 	}

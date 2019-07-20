@@ -3,8 +3,7 @@
 
 using namespace Rogue;
 
-class Monster : public iObject
-{
+class Monster : public iObject{
 public:
 	// each monster needs initial position
 	Monster() = delete;
@@ -23,29 +22,7 @@ public:
 
 	void move() {}
 
-	void move(const int& pXLoc, const int& pYLoc) override {
-		int x_diff = pXLoc - xLoc_;
-		int y_diff = pYLoc - yLoc_;
-
-		int abs_x_diff = abs(x_diff);
-		int abs_y_diff = abs(y_diff);
-
-		// figure out whether x or y is closer
-		if (abs_x_diff > abs_y_diff)
-		{
-			if (x_diff < 0)
-				--xLoc_;
-			else
-				++xLoc_;
-		}
-		else
-		{
-			if (y_diff < 0)
-				--yLoc_;
-			else
-				++yLoc_;
-		}
-	}
+	void move(const int& pXLoc, const int& pYLoc) override;
 
 protected:
 

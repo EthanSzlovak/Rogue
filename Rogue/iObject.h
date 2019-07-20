@@ -7,7 +7,6 @@ using std::string;
 static vector<string> inventory;
 namespace Rogue {
 	class iObject {
-		
 	protected:
 		int xLoc_, yLoc_;
 		char image_;
