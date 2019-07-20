@@ -1,9 +1,9 @@
 #pragma once
-#include "Object.h"
+#include "iObject.h"
 
 using namespace Rogue;
 
-class Monster : public Object
+class Monster : public iObject
 {
 public:
 	// each monster needs initial position

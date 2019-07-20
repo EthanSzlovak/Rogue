@@ -1,12 +1,12 @@
 #pragma once
-#include "Object.h"
+#include "iObject.h"
 #include <vector>
 #include <iostream>
 
 	
 
 using std::string;
-class Player : public Rogue::Object{
+class Player : public Rogue::iObject{
 public:
 	
 	Player(int xLoc, int yLoc) {

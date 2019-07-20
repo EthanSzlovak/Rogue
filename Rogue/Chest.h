@@ -1,10 +1,10 @@
 #pragma once
-#include "Object.h"
+#include "iObject.h"
 #include <string>
 #include <iostream>
 #include "Player.h"
 using std::string;
-class Chest : protected Rogue::Object {
+class Chest : protected Rogue::iObject {
 private:
 
 	bool isOpened = false;
