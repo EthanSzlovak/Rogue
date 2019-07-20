@@ -4,17 +4,19 @@
 #include <string>
 using std::vector;
 using std::string;
-static vector<string> inventory;
+
 namespace Rogue {
 	class iObject {
 	protected:
-		int xLoc_, yLoc_;
+		
+		int xLoc_, yLoc_, health_;
 		char image_;
 	public:
 		
 		iObject() {
 			xLoc_ = 0;
 			yLoc_ = 0;
+			health_ = 10;
 			image_ = ' ';
 		};
 		void move() {};
@@ -23,6 +25,8 @@ namespace Rogue {
 
 		virtual void draw(WINDOW* w) {};
 
+
+		void takeDamage(double damageToTake /*, DAMAGE TYPE?, DAMAGE SOURCE?*/);
 		void updateState() {};
 		int& xLoc() { return xLoc_; };
 		int xLoc() const { return xLoc_; };

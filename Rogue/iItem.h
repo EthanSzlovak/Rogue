@@ -7,14 +7,46 @@ protected:
 	int value_, weight_;
 	string name_;
 
+
 	const bool CONSUMABLE{ false }, MATERIAL{ false }, WEAPON{ false };
 public:
+	
+	//There should be no cases where this is used.
+	iItem() = delete;
+
 	//Constructor
 	iItem(string name, int value, int weight) {
 		name_ = name;
 		value_ = value;
 		weight_ = weight;
 	}
+
+	~iItem() = default;
+	//Copy Constructors
+	inline iItem(const iItem& copy) noexcept(false) {
+		*this = copy;
+	}
+
+	iItem& operator=(const iItem& rhs) {
+		name_ = rhs.name_;
+		value_ = rhs.value_;
+		weight_ = rhs.weight_;
+
+		return *this;
+	}
+
+	//Move Constructors
+	inline iItem(iItem&& copy) noexcept(false){
+		*this = std::move(copy);
+	}
+
+	iItem& operator=(iItem&& rhs) noexcept(false){
+		name_ = std::move(rhs.name_);
+		value_ = std::move(rhs.value_);
+		weight_ = std::move(rhs.weight_);
+		return *this;
+	}
+
 
 	//Getters and Setters
 	inline string& Name() {return name_;}

@@ -19,8 +19,8 @@ WINDOW* create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW* local_win);
 
 //Immediately Instantiated Variables
-Chest c("Treasure", 4, 5);
-Chest d("Gold", 6, 5);
+Chest c(iItem("Treasure", 10, 100), 4, 5);
+Chest d(iItem("Gold", 10, 0), 6, 5);
 Player p(0, 0);
 
 //Enemylisting
@@ -87,6 +87,10 @@ int main(int argc, char* argv[]){
 			destroy_win(mainGameWindow);
 			mainGameWindow = create_newwin(20, 40, 5, 1);
 			break;
+		case '.':
+			destroy_win(mainGameWindow);
+			mainGameWindow = create_newwin(20, 40, 5, 1);
+			break;
 		}
 
 		
@@ -107,7 +111,7 @@ WINDOW* updateInventoryWindow(WINDOW* w) {
 	//Get all items in the player inventory
 	for (int i = 0; i < (int)inventory.size(); ++i) {
 		wmove(w, i + 1, 1);
-		wprintw(w, inventory.at(i).c_str());
+		wprintw(w, inventory.at(i).Name().c_str());
 	}
 
 	//Redraw the Window

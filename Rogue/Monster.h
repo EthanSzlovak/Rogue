@@ -20,6 +20,9 @@ public:
 		wprintw(w, &image_);
 	}
 
+	void takeDamage(double damageToTake) {
+
+	}
 	void move() {}
 
 	void move(const int& pXLoc, const int& pYLoc) override;

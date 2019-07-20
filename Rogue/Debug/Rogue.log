@@ -1,9 +1,3 @@
-﻿  Chest.cpp
-  iItem.cpp
-  iWeapon.cpp
-  Monster.cpp
-  Player.cpp
-  Rogue.cpp
-  Generating Code...
+﻿  Rogue.cpp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe
