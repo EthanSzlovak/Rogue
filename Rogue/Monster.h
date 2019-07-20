@@ -10,10 +10,10 @@ public:
 	Monster() = delete;
 	~Monster() = default;	
 
-	Monster(int xLoc, int yLoc) {
+	Monster(int xLoc, int yLoc, char img) {
 		xLoc_ = xLoc;
 		yLoc_ = yLoc;
-		image_ = '#';
+		image_ = img;
 	}
 
 	void draw(WINDOW* w) override {

@@ -2,13 +2,13 @@
 #include <cstring>
 
 #include "curses.h"
-#include "Object.h"
+#include "iObject.h"
 #include "Player.h"
 #include "Chest.h"
 #include "Monster.h"
 
 //Using Variables
-using Rogue::Object;
+using Rogue::iObject;
 using std::vector;
 
 //Window Function Definitions
@@ -24,11 +24,11 @@ Player p(0, 0);
 //Enemylisting
 /*vector<Monster> monsterList{ Monster(5,5), Monster(10, 5) };
 vector<Object*> abstractEnemyList{ &monsterList[0], &monsterList[1] }*/;
-Monster m1(10, 5);
-Monster m2(5, 19);
+Monster m1(10, 5, 'M');
+Monster m2(5, 19, '&');
 
-Object* abstract_m1 = &m1;
-Object* abstract_m2 = &m2;
+iObject* abstract_m1 = &m1;
+iObject* abstract_m2 = &m2;
 
 int main(int argc, char* argv[]){
 	WINDOW* mainGameWindow;
