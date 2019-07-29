@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "Player.h"
+#include "iItem.hpp"
 using std::string;
 class Chest : protected Rogue::iObject {
 private:

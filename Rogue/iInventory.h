@@ -1,10 +1,11 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "iItem.h"
+#include "iItem.hpp"
 
 using std::string;
 using std::vector;
+
 static vector<iItem> inventory;
 class iInventory{
 public:

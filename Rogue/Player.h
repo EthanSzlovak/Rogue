@@ -1,5 +1,8 @@
 #pragma once
 #include "iObject.h"
+#include "iItem.hpp"
+#include "iWeapon.h"
+
 #include <vector>
 #include <iostream>
 
@@ -8,7 +11,8 @@
 using std::string;
 class Player : public Rogue::iObject{
 public:
-	
+	iItem rHand, lHand;
+
 	Player(int xLoc, int yLoc) {
 		xLoc_ = xLoc; 
 		yLoc_ = yLoc;

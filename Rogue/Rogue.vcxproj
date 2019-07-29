@@ -164,7 +164,6 @@
   <ItemGroup>
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="iInventory.cpp" />
-    <ClCompile Include="iItem.cpp" />
     <ClCompile Include="iWeapon.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -174,8 +173,9 @@
     <ClInclude Include="Chest.h" />
     <ClInclude Include="curses.h" />
     <ClInclude Include="iInventory.h" />
-    <ClInclude Include="iItem.h" />
+    <ClInclude Include="iItem.hpp" />
     <ClInclude Include="iWeapon.h" />
+    <ClInclude Include="Pair.hpp" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="iObject.h" />
     <ClInclude Include="Player.h" />

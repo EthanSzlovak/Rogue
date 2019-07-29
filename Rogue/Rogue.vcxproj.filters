@@ -36,9 +36,6 @@
     <ClCompile Include="iWeapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="iItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="iInventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="iItem.h">
-      <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="iWeapon.h">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
@@ -69,6 +63,12 @@
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="iInventory.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.hpp">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="iItem.hpp">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>

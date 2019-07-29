@@ -1,3 +1,7 @@
-﻿  Rogue.cpp
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  Chest.cpp
+  Player.cpp
+  Rogue.cpp
+  iInventory.cpp
+  iWeapon.cpp
+  Generating Code...
   Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe

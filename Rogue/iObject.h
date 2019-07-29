@@ -2,6 +2,7 @@
 #include "curses.h"
 #include <vector>
 #include <string>
+#include "Location.hpp"
 using std::vector;
 using std::string;
 
@@ -24,7 +25,7 @@ namespace Rogue {
 		virtual void move(const int& pXLoc, const int& pYLoc) {}
 
 		virtual void draw(WINDOW* w) {};
-
+		
 
 		void takeDamage(double damageToTake /*, DAMAGE TYPE?, DAMAGE SOURCE?*/);
 		void updateState() {};

@@ -1,5 +1,6 @@
 #pragma once
-#include "iItem.h"
+#include "iItem.hpp"
+
 class iWeapon : protected iItem{
 protected:
 	const int MIN_ENHANCEMENT{ -20 };
@@ -7,11 +8,21 @@ protected:
 
 public:
 
-	iWeapon();
+	iWeapon() {};
+	iWeapon(const int& value, const int& weight, 
+		const int& damage, const int& quality, 
+		const int& maxEnhancement, const int& currentEnhancement) 
+			: iItem("TODO", value, weight, WEAPON){
+		damage_ = damage;
+		quality_ = quality;
+		maxEnhancement_ = maxEnhancement;
+		currentEnhancement_ = currentEnhancement;
+	}
+
+
 	int getQuality() { return quality_; };
 	//Use for back-end calculations, actual damage is based on a variety of different factors
 	int getDamage() { return damage_; };
-
 
 	double getActualDamage(){
 		double actualDamage = damage_;
@@ -28,16 +39,9 @@ public:
 		}
 	};
 
-	string getName() {
-		return name_;
-	}
 	//TODO Find way to add prefix and suffix, Incredible sword of Fire etc.
-	void changeName(string toChange) {
-		name_ = toChange;
+	int getEnhancement() {
+		return this->currentEnhancement_;
 	}
-
-
-
-
 };
 

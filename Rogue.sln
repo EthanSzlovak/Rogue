@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rogue", "Rogue\Rogue.vcxproj", "{B19C70B0-5B4D-4B6B-9C84-3079408572C9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RogueTesting", "RogueTesting\RogueTesting.vcxproj", "{8B91C992-704D-42D2-BBF3-7C5D72B60946}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B19C70B0-5B4D-4B6B-9C84-3079408572C9} = {B19C70B0-5B4D-4B6B-9C84-3079408572C9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +30,16 @@ Global
 		{B19C70B0-5B4D-4B6B-9C84-3079408572C9}.Release|x64.Build.0 = Release|x64
 		{B19C70B0-5B4D-4B6B-9C84-3079408572C9}.Release|x86.ActiveCfg = Release|Win32
 		{B19C70B0-5B4D-4B6B-9C84-3079408572C9}.Release|x86.Build.0 = Release|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Debug|x64.ActiveCfg = Debug|x64
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Debug|x64.Build.0 = Debug|x64
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Debug|x86.ActiveCfg = Debug|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Debug|x86.Build.0 = Debug|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Release|x64.ActiveCfg = Release|x64
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Release|x64.Build.0 = Release|x64
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Release|x86.ActiveCfg = Release|Win32
+		{8B91C992-704D-42D2-BBF3-7C5D72B60946}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
