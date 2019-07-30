@@ -8,19 +8,25 @@ protected:
 
 public:
 
-	iWeapon() {};
-	iWeapon(const int& value, const int& weight, 
+	iWeapon() = delete;
+	//Constructor
+	//name, value, weight, damage, quality, Maximum Enhancement, current enhancement
+	iWeapon(const string& name, const int& value, const int& weight,
 		const int& damage, const int& quality, 
 		const int& maxEnhancement, const int& currentEnhancement) 
-			: iItem("TODO", value, weight, WEAPON){
+			: iItem(name, value, weight, WEAPON){
 		damage_ = damage;
 		quality_ = quality;
 		maxEnhancement_ = maxEnhancement;
 		currentEnhancement_ = currentEnhancement;
 	}
 
+	//Getters and Setters
+	using iItem::Name;
+	using iItem::Value;
+	using iItem::Weight;
+	using iItem::Quality;
 
-	int getQuality() { return quality_; };
 	//Use for back-end calculations, actual damage is based on a variety of different factors
 	int getDamage() { return damage_; };
 

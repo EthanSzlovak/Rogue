@@ -24,7 +24,7 @@ using std::function;
 
 	protected:
 		
-		int value_, weight_;
+		int value_, weight_, quality_;
 		string name_;
 
 		enhanceType enhanceType_ = enhanceType::E_NONE;
@@ -34,39 +34,55 @@ using std::function;
 
 	public:
 		void (*onConsumeWeapon_)( class iWeapon&);
+
+		//Empty Constructor
 		iItem() {
 			name_ = " ";
 			value_ = -1;
 			weight_ = -1;
+			quality_ = -1;
 		}
 		
-
-		
-		//Constructor
-		iItem(const char* name, int value, int weight, iType itemType = iType::NONE) {
+		//Normal Constructor
+		iItem(const string& name, int value, int weight, iType itemType = iType::NONE) {
 			name_ = name;
 			value_ = value;
 			weight_ = weight;
-
+			quality_ = 0;
 			if (itemType == iType::CONSUMEABLE) {
 				throw std::invalid_argument::logic_error("No onConsume function defined for consumeable item " + name_);
 			}type_ = itemType;
 		
 		}
 
-
-
 		//Consumeables
-		iItem(const char* name, int value, int weight, void(*onConsumeWeapon)(iWeapon& n) ) {
+		iItem(const string& name, int value, int weight, void(*onConsumeWeapon)(iWeapon& n) ) {
 			name_ = name;
 			value_ = value;
 			weight_ = weight;
 			type_ = WEAPON;
 			enhanceType_ = E_WEAPON;
+			quality_ = 0;
+			onConsumeWeapon_ = onConsumeWeapon;
+		}
+		
+
+		//Consumeables with a quality marker
+		iItem(const string& name, int value, int weight, int quality, void(*onConsumeWeapon)(iWeapon& n) ) {
+			name_ = name;
+			value_ = value;
+			weight_ = weight;
+			type_ = WEAPON;
+			enhanceType_ = E_WEAPON;
+			quality_ = quality_;
 			onConsumeWeapon_ = onConsumeWeapon;
 		}
 
+		
+
+
 		~iItem() = default;
+
 		//Copy Constructors
 		inline iItem(const iItem& copy) noexcept(false) {
 			*this = copy;
@@ -101,6 +117,9 @@ using std::function;
 
 		inline int& Weight() { return weight_; }
 		inline int Weight() const { return weight_; };
+		
+		inline int& Quality() { return quality_; }
+		inline int Quality() const {return quality_;}
 
 		double calculateActualValue() {
 			//TODO: Implement Value Things
