@@ -24,7 +24,7 @@ using std::function;
 
 	protected:
 		
-		int value_, weight_, quality_;
+		int value_, weight_, quality_, durability_ = -1;
 		string name_;
 
 		enhanceType enhanceType_ = enhanceType::E_NONE;
@@ -44,42 +44,10 @@ using std::function;
 		}
 		
 		//Normal Constructor
-		iItem(const string& name, int value, int weight, iType itemType = iType::NONE) {
-			name_ = name;
-			value_ = value;
-			weight_ = weight;
-			quality_ = 0;
-			if (itemType == iType::CONSUMEABLE) {
-				throw std::invalid_argument::logic_error("No onConsume function defined for consumeable item " + name_);
-			}type_ = itemType;
-		
-		}
+		iItem(const string& name, int value, int weight, iType itemType = iType::NONE);
 
-		//Consumeables
-		iItem(const string& name, int value, int weight, void(*onConsumeWeapon)(iWeapon& n) ) {
-			name_ = name;
-			value_ = value;
-			weight_ = weight;
-			type_ = WEAPON;
-			enhanceType_ = E_WEAPON;
-			quality_ = 0;
-			onConsumeWeapon_ = onConsumeWeapon;
-		}
-		
-
-		//Consumeables with a quality marker
-		iItem(const string& name, int value, int weight, int quality, void(*onConsumeWeapon)(iWeapon& n) ) {
-			name_ = name;
-			value_ = value;
-			weight_ = weight;
-			type_ = WEAPON;
-			enhanceType_ = E_WEAPON;
-			quality_ = quality_;
-			onConsumeWeapon_ = onConsumeWeapon;
-		}
-
-		
-
+		//Weapon Consumeables (Whetstone, enhancers, etc)
+		iItem(const string& name, int value, int weight, void(*onConsumeWeapon)(iWeapon& n), int durability = 1, int quality = 0);
 
 		~iItem() = default;
 
@@ -127,3 +95,26 @@ using std::function;
 			return value_;
 		}
 	};
+
+	iItem::iItem(const string& name, int value, int weight, iType itemType = iType::NONE) {
+		name_ = name;
+		value_ = value;
+		weight_ = weight;
+		quality_ = 0;
+		durability_ = 0;
+		if (itemType == iType::CONSUMEABLE) {
+			throw std::invalid_argument::logic_error("No onConsume function defined for consumeable item " + name_);
+		}type_ = itemType;
+	}
+
+
+	iItem::iItem(const string& name, int value, int weight, void(*onConsumeWeapon)(iWeapon& n), int durability = 1, int quality = 0) {
+		name_ = name;
+		value_ = value;
+		weight_ = weight;
+		type_ = WEAPON;
+		enhanceType_ = E_WEAPON;
+		quality_ = quality_;
+		durability_ = durability;
+		onConsumeWeapon_ = onConsumeWeapon;
+	}

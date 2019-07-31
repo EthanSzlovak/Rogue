@@ -12,14 +12,14 @@ public:
 	//Constructor
 	//name, value, weight, damage, quality, Maximum Enhancement, current enhancement
 	iWeapon(const string& name, const int& value, const int& weight,
-		const int& damage, const int& quality, 
+		const int& damage, const int& quality, const int& durability, 
 		const int& maxEnhancement, const int& currentEnhancement) 
 			: iItem(name, value, weight, WEAPON){
 		damage_ = damage;
 		quality_ = quality;
 		maxEnhancement_ = maxEnhancement;
 		currentEnhancement_ = currentEnhancement;
-	}
+	}//name, value, weight, damage, quality, Maximum Enhancement, current enhancement
 
 	//Getters and Setters
 	using iItem::Name;

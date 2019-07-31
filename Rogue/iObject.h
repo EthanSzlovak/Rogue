@@ -26,7 +26,6 @@ namespace Rogue {
 
 		virtual void draw(WINDOW* w) {};
 		
-
 		void takeDamage(double damageToTake /*, DAMAGE TYPE?, DAMAGE SOURCE?*/);
 		void updateState() {};
 		int& xLoc() { return xLoc_; };

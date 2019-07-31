@@ -10,22 +10,18 @@ namespace RogueTesting
 	TEST_CLASS(ArmorTesting){
 	public:		
 		TEST_METHOD(iWeaponConstructorTest) {
-			iWeapon TrainingSword("Training Sword", 12, 12, 12, 1, 20, 0);
-			string n = "Sharpener";
-		
-			iItem whetStone("Apples", 10, 10, [](iWeapon& toUse) {
+			iWeapon TrainingSword("Training Sword", 100, 15, 25, 1, 150, 20, 0);
+			iItem whetStone("Whetstone", 10, 10, [](iWeapon& toUse) {
 				toUse.sumEnhancement(10);
-				});
+			});
 			whetStone.onConsumeWeapon_(TrainingSword);
 			Assert::AreEqual(10, TrainingSword.getEnhancement());
 		}
 
 
 		TEST_METHOD(iWeaponAboveEnhancementTest) {
-			iWeapon TrainingSword("Training Sword", 12, 12, 12, 1, 20, 0);
-			string n = "Sharpener";
-
-			iItem whetStone("Apples", 10, 10, [](iWeapon& toUse) {
+			iWeapon TrainingSword("Training Sword", 100, 15, 25, 1, 150, 20, 0);
+			iItem whetStone("Whetstone", 10, 10, [](iWeapon& toUse) {
 				toUse.sumEnhancement(10);
 				toUse.Value() *= 1.2;
 				toUse.Name().append(" of sharpness");

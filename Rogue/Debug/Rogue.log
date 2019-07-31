@@ -1,7 +1,37 @@
 ﻿  Chest.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(99,82): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(47): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,111): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,128): error C2572:  'iItem::iItem': redefinition of default argument: parameter 2
+  Monster.cpp
   Player.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(99,82): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(47): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,111): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,128): error C2572:  'iItem::iItem': redefinition of default argument: parameter 2
   Rogue.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(99,82): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(47): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,111): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,128): error C2572:  'iItem::iItem': redefinition of default argument: parameter 2
   iInventory.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(99,82): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(47): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,111): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,128): error C2572:  'iItem::iItem': redefinition of default argument: parameter 2
   iWeapon.cpp
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(99,82): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(47): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,111): error C2572:  'iItem::iItem': redefinition of default argument: parameter 1
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(111,128): error C2572:  'iItem::iItem': redefinition of default argument: parameter 2
   Generating Code...
-  Rogue.vcxproj -> C:\Users\nahte\source\repos\Rogue\Debug\Rogue.exe
+C:\Users\nahte\source\repos\Rogue\Rogue\iItem.hpp(50): message :  see declaration of 'iItem::iItem'
